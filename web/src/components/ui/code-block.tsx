@@ -1,6 +1,6 @@
-import { useEffect, useState, type ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps } from 'react'
 import { codeToHtml } from 'shiki'
-import { twMerge } from "tailwind-merge";
+import { twMerge } from 'tailwind-merge'
 
 interface CodeBlockProps extends ComponentProps<'div'> {
   code: string

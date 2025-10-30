@@ -4,8 +4,11 @@ import { fastifySwagger } from '@fastify/swagger'
 import { serializerCompiler, validatorCompiler, jsonSchemaTransform, type ZodTypeProvider } from 'fastify-type-provider-zod'
 import ScalarApiReference from '@scalar/fastify-api-reference'
 
-import { listWebhooks } from './routes/list-webhooks'
 import { env } from './config/env'
+import { listWebhooks } from './routes/list-webhooks'
+import { getWebhook } from './routes/get-webhook'
+import { deleteWebhook } from './routes/delete-webhook'
+import { captureWebhook } from './routes/capture-webhook'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -33,7 +36,10 @@ app.register(ScalarApiReference, {
   routePrefix: '/docs'
 })
 
+app.register(getWebhook)
 app.register(listWebhooks)
+app.register(deleteWebhook)
+app.register(captureWebhook)
 
 app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
   console.log(`HTTP server running on http://localhost:${env.PORT}!`)
