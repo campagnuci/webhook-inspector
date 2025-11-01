@@ -7,9 +7,13 @@ export function Loading() {
       <p className="mt-4 text-zinc-300 text-medium font-medium">
         Loading
         <span className="inline-block animate-pulse-dot">.</span>
-        <span className="inline-block animate-pulse-dot [animation-delay:0.2s]">.</span>
-        <span className="inline-block animate-pulse-dot [animation-delay:0.4s]">.</span>
+        <span className="inline-block animate-pulse-dot [animation-delay:0.2s]">
+          .
+        </span>
+        <span className="inline-block animate-pulse-dot [animation-delay:0.4s]">
+          .
+        </span>
       </p>
     </div>
-  );
+  )
 }

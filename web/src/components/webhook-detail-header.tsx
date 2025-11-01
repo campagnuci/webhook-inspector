@@ -7,7 +7,12 @@ interface WebhookDetailHeaderProps {
   createdAt: Date
 }
 
-export function WebhookDetailHeader({ method, pathname, ip, createdAt }: WebhookDetailHeaderProps) {
+export function WebhookDetailHeader({
+  method,
+  pathname,
+  ip,
+  createdAt,
+}: WebhookDetailHeaderProps) {
   return (
     <div className="space-y-4 border-b border-zinc-700 p-6">
       <div className="flex items-center gap-3">
