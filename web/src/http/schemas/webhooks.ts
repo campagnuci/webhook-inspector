@@ -25,3 +25,7 @@ export const webhookDetailsSchema = z.object({
   body: z.string().nullable(),
   createdAt: z.coerce.date(),
 })
+
+export interface GenerateHandlerCodeResponse {
+  code: string
+}

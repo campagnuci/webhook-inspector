@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsx:watch": "tsx watch --env-file=.env src/server.ts",
-    "start": "node dist/server.js",
+    "dev": "tsx watch --env-file=.env src/server.ts",
+    "build": "tsup",
+    "start": "node dist/server.mjs",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit  migrate",
     "db:studio": "drizzle-kit studio",
@@ -21,13 +22,16 @@
     "@types/node": "^24.9.1",
     "@types/pg": "^8.15.5",
     "drizzle-kit": "^0.31.5",
+    "tsup": "^8.5.0",
     "tsx": "^4.20.6",
     "typescript": "~5.9.3"
   },
   "dependencies": {
+    "@ai-sdk/google": "^2.0.26",
     "@fastify/cors": "^11.1.0",
     "@fastify/swagger": "^9.5.2",
     "@scalar/fastify-api-reference": "^1.38.1",
+    "ai": "^5.0.86",
     "drizzle-orm": "^0.44.7",
     "drizzle-zod": "^0.8.3",
     "fastify": "^5.6.1",
